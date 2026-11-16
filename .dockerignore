@@ -1,0 +1,17 @@
+.git
+.github
+.env.example
+node_modules
+npm-debug.log
+yarn-error.log
+.idea
+.vscode
+storage/*.key
+storage/logs/*
+storage/framework/cache/*
+storage/framework/sessions/*
+storage/framework/views/*
+tests
+docker/prometheus/data
+docker/grafana/data
+benchmark/results

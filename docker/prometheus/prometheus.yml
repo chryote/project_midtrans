@@ -1,0 +1,21 @@
+global:
+  scrape_interval: 5s
+  evaluation_interval: 5s
+
+scrape_configs:
+  # Scrape Laravel Application Metrics
+  - job_name: 'laravel_app'
+    metrics_path: '/api/metrics'
+    scrape_interval: 5s
+    scrape_timeout: 4s
+    static_configs:
+      - targets: ['nginx:80']
+        labels:
+          service: 'midtrans-laravel-app'
+          env: 'local'
+
+  # Scrape Prometheus Internal Metrics
+  - job_name: 'prometheus'
+    scrape_interval: 15s
+    static_configs:
+      - targets: ['localhost:9090']
